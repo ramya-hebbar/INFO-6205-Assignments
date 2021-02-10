@@ -73,20 +73,66 @@ public class LinkedList <T>{
         return head;
     }
 
+    //split the array into parts
+    public void splitListToParts(Node<T> root, int k) {
+        int sizeOfList = size(root);
+
+        int elementsPerPart = sizeOfList/k;
+
+        int extraItemIndices = sizeOfList % k;
+
+        Node<T>[] partsArray = new Node[k];
+
+        for(int i=0; i<k; i++) {
+            Node<T> headNode = root;
+
+            int perPart = elementsPerPart;
+
+            if(i < extraItemIndices) {
+                perPart += 1;
+            }
+
+            for(int j=0; j<perPart - 1; j++) {
+                if(root != null)
+                    root = root.next;
+            }
+
+            if(root != null) {
+                Node<T> prevNode = root;
+                root = root.next;
+                prevNode.next = null;
+            }
+
+            partsArray[i] = headNode;
+        }
+
+        //print the parts
+        for (int i=0; i<k; i++) {
+            Node<T> node = partsArray[i];
+
+            if(node != null) {
+                this.printLinkedList(node);
+            }
+            else {
+                System.out.println("[]");
+            }
+        }
+    }
+
     //helper functions
 
-//    public int size() {
-//        int size = 0;
-//        Node<T> temp = head;
-//
-//        while(temp != null) {
-//            temp = temp.next;
-//            size++;
-//        }
-//        return size;
-//    }
+    public int size(Node<T> root) {
+        int size = 0;
+        Node<T> temp = root;
 
-    public void printLinkedList() {
+        while(temp != null) {
+            temp = temp.next;
+            size++;
+        }
+        return size;
+    }
+
+    public void printLinkedList(Node<T> head) {
         Node<T> temp = head;
 
         while(temp != null) {

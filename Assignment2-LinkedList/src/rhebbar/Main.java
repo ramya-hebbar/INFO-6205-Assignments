@@ -20,13 +20,13 @@ public class Main {
         swapList.addTail(6);
 
         System.out.println("Original list : ");
-        swapList.printLinkedList(swapList.head);
+        swapList.printList();
 
         //swap in pairs
-        swapList.swapPairs(swapList.head);
+        swapList.swapPairs();
 
         System.out.println("Swapped list : ");
-        swapList.printLinkedList(swapList.head);
+        swapList.printList();
 
         /*  *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */
         //Q2: Delete a node in the linked list
@@ -41,13 +41,13 @@ public class Main {
         list.addTail(4);
 
         System.out.println("List before deletion : ");
-        list.printLinkedList(list.head);
+        list.printList();
 
         //delete
         list.deleteNode(list.getNodeWithData(3));
 
         System.out.println("List after deletion : ");
-        list.printLinkedList(list.head);
+        list.printList();
 
         /*  *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */
         //Q3: Even-odd linked list
@@ -63,12 +63,12 @@ public class Main {
         evenOddList.addTail(5);
 
         System.out.println("List before rearranging : ");
-        evenOddList.printLinkedList(evenOddList.head);
+        evenOddList.printList();
 
-        evenOddList.arrangeInOddEvenFashion(evenOddList.head);
+        evenOddList.oddEvenArrangement();
 
         System.out.println("List after rearranging : ");
-        evenOddList.printLinkedList(evenOddList.head);
+        evenOddList.printList();
 
         /*  *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */
         //Q4: Split linked list in parts
@@ -89,11 +89,12 @@ public class Main {
         splitList.addTail(10);
 
         System.out.println("List before splitting: ");
-        splitList.printLinkedList(splitList.head);
+        splitList.printList();
 
         System.out.println("List after splitting: ");
+
         //splitting and printing the list
-        splitList.splitListToParts(splitList.head,  3);
+        splitList.splitIntoParts(3);
 
         /*  *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */
         //Q5: Insert in circular linked list
@@ -101,6 +102,48 @@ public class Main {
         System.out.println("QUESTION 5");
 
         //create list
+        LinkedList<Integer> circularList = new LinkedList<>();
+        circularList.addTail(1);
+        circularList.addTail(3);
+        circularList.addTail(4);
 
+        //make circular
+        circularList.makeListCircular();
+
+        System.out.println("List before inserting new value: ");
+        circularList.printCircularList();
+
+        //getting a node from the list
+        Node<Integer> pointerNode = circularList.getNodeWithData(3);
+
+        //inserting a new value
+        insertIntoSortedCircularList(circularList, pointerNode, 2);
+
+        System.out.println("List after inserting new value: ");
+        circularList.printCircularList();
+    }
+
+    public static void insertIntoSortedCircularList(LinkedList list, Node<Integer> node, Integer insertVal) {
+        //check for empty list
+        if(node == null) {
+            //create list
+            Node<Integer> insertNode = new Node<>(insertVal);
+            list.head = insertNode;
+            insertNode.next = list.head;
+
+            return;
+        }
+
+        Node<Integer> temp = node;
+        Node<Integer> front = node.next;
+
+        while(temp.data > insertVal) {
+            temp = temp.next;
+            front = temp.next;
+        }
+
+        Node<Integer> insertNode = new Node<>(insertVal);
+        temp.next = insertNode;
+        insertNode.next = front;
     }
 }

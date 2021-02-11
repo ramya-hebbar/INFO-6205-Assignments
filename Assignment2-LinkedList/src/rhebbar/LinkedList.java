@@ -3,8 +3,31 @@ package rhebbar;
 public class LinkedList <T>{
     public Node<T> head;
 
+    //wrapper functions
+    public void printList() {
+        printLinkedList(head);
+    }
+
+    public void printCircularList() {
+        printCircularLinkedList(head);
+    }
+
+    public void swapPairs() {
+        swapPairs(head);
+    }
+
+    public void oddEvenArrangement() {
+        arrangeInOddEvenFashion(head);
+    }
+
+    public void splitIntoParts(int numberOfParts) {
+        splitListToParts(head, numberOfParts);
+    }
+
+    /*  *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */
+
     //swap nodes in pairs
-    public Node<T> swapPairs(Node<T> head) {
+    private Node<T> swapPairs(Node<T> head) {
         //check for empty list
         if(head == null)
             return null;
@@ -39,14 +62,10 @@ public class LinkedList <T>{
     }
 
     //odd even linked list
-    public Node<T> arrangeInOddEvenFashion(Node<T> head) {
-        //check for empty list
-        if(head == null)
-            return null;
-
-        //check for 1 element
-        if(head.next == null)
-            return head;
+    private void arrangeInOddEvenFashion(Node<T> head) {
+        //check for empty list and single element
+        if(head == null || head.next == null)
+            return;
 
         //assign temporary pointers
         Node<T> tempForOdd = head;
@@ -69,12 +88,10 @@ public class LinkedList <T>{
 
         //pointing the last odd node to the even head
         tempForOdd.next = evenHead;
-
-        return head;
     }
 
     //split the array into parts
-    public void splitListToParts(Node<T> root, int k) {
+    private void splitListToParts(Node<T> root, int k) {
         int sizeOfList = size(root);
 
         int elementsPerPart = sizeOfList/k;
@@ -119,6 +136,8 @@ public class LinkedList <T>{
         }
     }
 
+    /*  *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */
+
     //helper functions
 
     public int size(Node<T> root) {
@@ -132,7 +151,7 @@ public class LinkedList <T>{
         return size;
     }
 
-    public void printLinkedList(Node<T> head) {
+    private void printLinkedList(Node<T> head) {
         Node<T> temp = head;
 
         while(temp != null) {
@@ -174,5 +193,43 @@ public class LinkedList <T>{
         temp.next = node;
     }
 
+    public Node<T> getTailNode() {
+        if(head == null || head.next == null)
+            return head;
 
+        Node<T> temp = head;
+
+        while(temp.next != null) {
+            temp = temp.next;
+        }
+
+        return temp;
+    }
+
+    public void makeListCircular() {
+        Node<T> tail = this.getTailNode();
+        tail.next = head;
+    }
+
+    private void printCircularLinkedList(Node<T> head) {
+        if (head != null) {
+            Node<T> temp = head;
+            Node<T> initialStart = temp;
+
+            System.out.print("[" + temp.data);
+            temp = temp.next;
+
+            while (temp != initialStart) {
+                System.out.print(", ");
+                System.out.print(temp.data);
+                temp = temp.next;
+            }
+
+            System.out.print("]");
+            System.out.println();
+        }
+        else {
+            System.out.println("[]");
+        }
+    }
 }

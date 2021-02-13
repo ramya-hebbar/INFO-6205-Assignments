@@ -103,9 +103,9 @@ public class Main {
 
         //create list
         LinkedList<Integer> circularList = new LinkedList<>();
-        circularList.addTail(1);
         circularList.addTail(3);
         circularList.addTail(4);
+        circularList.addTail(1);
 
         //make circular
         circularList.makeListCircular();

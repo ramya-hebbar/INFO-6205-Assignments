@@ -8,6 +8,10 @@ public class Main {
         /*  *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */
         //Assignment Questions
 
+        System.out.println();
+        System.out.println("/*  *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */");
+        System.out.println();
+
         //Q1 - Merge in between links
         System.out.println("QUESTION 1 - Merge in between linked lists");
 
@@ -18,7 +22,7 @@ public class Main {
         mainList.addTail(4);
         mainList.addTail(5);
 
-        System.out.print("Main list: ");
+        System.out.print("Main list : ");
         mainList.printList();
 
         LinkedList<Integer> mergeList = new LinkedList<>();
@@ -26,12 +30,12 @@ public class Main {
         mergeList.addTail(101);
         mergeList.addTail(102);
 
-        System.out.print("List to merge: ");
+        System.out.print("List to merge : ");
         mergeList.printList();
 
         mainList.mergeInBetween(2, 3, mergeList.head);
 
-        System.out.print("Merged list: ");
+        System.out.print("Merged list : ");
         mainList.printList();
 
         System.out.println();
@@ -48,7 +52,7 @@ public class Main {
         swapList.addTail(4);
         swapList.addTail(5);
 
-        System.out.println("List before swapping elements");
+        System.out.print("List before swapping elements : ");
         swapList.printList();
 
         int swapIndex = 2;
@@ -56,7 +60,7 @@ public class Main {
         System.out.println("Removing elements of value : " + swapIndex);
         swapList.swapNodesAtIndex(swapIndex);
 
-        System.out.println("List after swapping elements");
+        System.out.print("List after swapping elements : ");
         swapList.printList();
 
         System.out.println();
@@ -76,7 +80,7 @@ public class Main {
         linkedList.addTail(5);
         linkedList.addTail(6);
 
-        System.out.println("List before removing elements");
+        System.out.print("List before removing elements : ");
         linkedList.printList();
 
         int valueToRemove = 6;
@@ -84,16 +88,17 @@ public class Main {
         System.out.println("Removing elements of value : " + valueToRemove);
         linkedList.removeElementWithValue(valueToRemove);
 
-        System.out.println("List after removing elements");
+        System.out.print("List after removing elements : ");
         linkedList.printList();
 
-        System.out.println("Re-initializing list");
+        System.out.println("Re-initializing list...");
+
         linkedList = new LinkedList<>();
         linkedList.addTail(1);
         linkedList.addTail(1);
         linkedList.addTail(1);
 
-        System.out.println("List before removing elements");
+        System.out.print("List before removing elements : ");
         linkedList.printList();
 
         valueToRemove = 1;
@@ -101,7 +106,7 @@ public class Main {
         System.out.println("Removing elements of value : " + valueToRemove);
         linkedList.removeElementWithValue(valueToRemove);
 
-        System.out.println("List after removing elements");
+        System.out.print("List after removing elements : ");
         linkedList.printList();
 
         System.out.println();
@@ -120,31 +125,45 @@ public class Main {
 
         DoubleLinkList<Integer> dll = new DoubleLinkList<>();
 
-        //implementing functions addHead, addTail, size and printList
-        System.out.println("Current size of the Double Linked List is : " + dll.sizeOfList());
-
-        dll.addToHead(1);
-        dll.addToHead(2);
-        dll.addToHead(3);
-
-        System.out.println("Current size of the Double Linked List is : " + dll.sizeOfList());
-
-        dll.addToTail(4);
-        dll.addToTail(5);
-        dll.addToTail(6);
-
-        System.out.println("Current size of the Double Linked List is : " + dll.sizeOfList());
-
-        System.out.println("Printing the Double Linked List");
+        System.out.println("Initialised a double linked list");
+        System.out.print("Double linked list : ");
         dll.printList();
 
+        //implementing functions addHead, addTail, size and printList
+        System.out.println("Current size is : " + dll.sizeOfList());
 
+        System.out.println("Adding to head...");
+        dll.addToHead(1);
+        System.out.print("Double linked list : ");
+        dll.printList();
 
-        /*  *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */
-        //Wrapper Functions
+        System.out.println("Adding to head...");
+        dll.addToHead(2);
+        System.out.print("Double linked list : ");
+        dll.printList();
 
+        System.out.println("Adding to head...");
+        dll.addToHead(3);
+        System.out.print("Double linked list : ");
+        dll.printList();
 
-        /*  *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */
-        //Helper Functions
+        System.out.println("Current size is : " + dll.sizeOfList());
+
+        System.out.println("Adding to tail...");
+        dll.addToTail(4);
+        System.out.print("Double linked list : ");
+        dll.printList();
+
+        System.out.println("Adding to tail...");
+        dll.addToTail(5);
+        System.out.print("Double linked list : ");
+        dll.printList();
+
+        System.out.println("Adding to tail...");
+        dll.addToTail(6);
+        System.out.print("Double linked list : ");
+        dll.printList();
+
+        System.out.println("Current size is : " + dll.sizeOfList());
     }
 }

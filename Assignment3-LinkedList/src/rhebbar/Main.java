@@ -116,6 +116,29 @@ public class Main {
         //Q4 - Delete n nodes after m nodes
         System.out.println("QUESTION 4 - Delete N nodes after M nodes of a linked list");
 
+        LinkedList<Integer> deleteList = new LinkedList<>();
+        deleteList.addTail(1);
+        deleteList.addTail(2);
+        deleteList.addTail(3);
+        deleteList.addTail(4);
+        deleteList.addTail(5);
+        deleteList.addTail(6);
+        deleteList.addTail(7);
+        deleteList.addTail(8);
+        deleteList.addTail(9);
+        deleteList.addTail(10);
+        deleteList.addTail(11);
+        deleteList.addTail(12);
+        deleteList.addTail(13);
+
+        System.out.print("List before deleting : ");
+        deleteList.printList();
+
+        deleteList.deleteNodes(2, 1);
+
+        System.out.print("List after deleting : ");
+        deleteList.printList();
+
         System.out.println();
         System.out.println("/*  *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */");
         System.out.println();

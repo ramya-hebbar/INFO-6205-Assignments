@@ -3,6 +3,24 @@ package rhebbar;
 public class LinkedList<T> {
     public Node<T> head;
 
+    //wrapper functions
+
+    public void mergeInBetween(int startIndex, int endIndex, Node<T> list2) {
+        mergeInBetweenLists( startIndex, endIndex, list2);
+    }
+
+    public void swapNodesAtIndex(int index) {
+        swapNodesFromListAtIndex(index);
+    }
+
+    public void removeElementWithValue(T value) {
+        removeFromListElementValued(value);
+    }
+
+    public void deleteNodes(int numberOfNodesToSkip, int numberOfNodesToDelete) {
+        deleteNodesFromList(head, numberOfNodesToSkip, numberOfNodesToDelete);
+    }
+
     //helper functions
     public void printList() {
         printLinkedList(head);
@@ -24,19 +42,6 @@ public class LinkedList<T> {
         }
         //obtained tail node - add new node
         temp.next = node;
-    }
-
-    //wrapper functions
-
-    public void mergeInBetween(int startIndex, int endIndex, Node<T> list2) {
-        mergeInBetweenLists( startIndex, endIndex, list2);
-    }
-
-    public void swapNodesAtIndex(int index) {
-        swapNodesFromListAtIndex(index);
-    }
-    public void removeElementWithValue(T value) {
-        removeFromListElementValued(value);
     }
 
     //private functions
@@ -139,5 +144,37 @@ public class LinkedList<T> {
         //check if head holds a value to be deleted and update head if needed
         if(head.data == val)
             head = head.next;
+    }
+
+    private void deleteNodesFromList(Node<T> head, int m, int n) {
+        //check for empty list
+        if(head == null)
+            return;
+
+        Node<T> temp = head;
+        int startIndex = 1;
+
+        while(temp.next != null && startIndex++ != m) {
+            temp = temp.next;
+        }
+
+        //check if pointer is at end of list
+        if(temp.next != null) {
+            Node<T> removeNode = temp.next;
+            int removeCount = 1;
+
+            while(removeNode.next != null && removeCount++ != n) {
+                removeNode = removeNode.next;
+            }
+
+            if(removeNode.next != null) {
+                temp.next = removeNode.next;
+                temp = removeNode.next;
+                deleteNodesFromList(temp, m, n);
+            }
+            else {
+                temp.next = null;
+            }
+        }
     }
 }

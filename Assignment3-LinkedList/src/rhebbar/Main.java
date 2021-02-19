@@ -33,7 +33,12 @@ public class Main {
         System.out.print("List to merge : ");
         mergeList.printList();
 
-        mainList.mergeInBetween(2, 3, mergeList.head);
+        int startIndex = 2;
+        int endIndex = 3;
+
+        System.out.println("Starting merge at index : " + startIndex + " and ending merge at index : " + endIndex);
+
+        mainList.mergeInBetween(startIndex, endIndex, mergeList.head);
 
         System.out.print("Merged list : ");
         mainList.printList();
@@ -57,7 +62,7 @@ public class Main {
 
         int swapIndex = 2;
 
-        System.out.println("Removing elements of value : " + swapIndex);
+        System.out.println("Swapping elements at index : " + swapIndex);
         swapList.swapNodesAtIndex(swapIndex);
 
         System.out.print("List after swapping elements : ");
@@ -134,7 +139,12 @@ public class Main {
         System.out.print("List before deleting : ");
         deleteList.printList();
 
-        deleteList.deleteNodes(2, 1);
+        int numberOfNodesToSkip = 2;
+        int numberOfNodesToDelete = 1;
+
+        System.out.println("Deleting " + numberOfNodesToDelete + " node(s) after " + numberOfNodesToSkip + " node(s)");
+
+        deleteList.deleteNodes(numberOfNodesToSkip, numberOfNodesToDelete);
 
         System.out.print("List after deleting : ");
         deleteList.printList();

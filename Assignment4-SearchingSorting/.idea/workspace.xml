@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aea039c9-35b0-4829-bbe8-f37280a611e6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Assignment1-BinaryTrees/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment1-BinaryTrees/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c2acdb4e-d4af-4b9d-8dde-36ad032bc0b0" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,18 +17,8 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
-  </component>
-  <component name="ProjectId" id="1oGjD5jRYFxnCLMhCoq81BXZSvx" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
+  <component name="ProjectId" id="1oubnixQaNnmEpYrxMJsgwyMRaI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
@@ -91,13 +78,10 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="restartRequiresConfirmation" value="false" />
-  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="rhebbar.Main" />
-      <module name="Assignment2-LinkedList" />
+      <module name="Assignment4-SearchingSorting" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
@@ -114,11 +98,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="aea039c9-35b0-4829-bbe8-f37280a611e6" name="Default Changelist" comment="" />
-      <created>1612919699287</created>
+      <changelist id="c2acdb4e-d4af-4b9d-8dde-36ad032bc0b0" name="Default Changelist" comment="" />
+      <created>1614139592651</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1612919699287</updated>
+      <updated>1614139592651</updated>
     </task>
     <servers />
   </component>

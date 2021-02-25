@@ -1,6 +1,5 @@
 package rhebbar;
 
-import java.util.HashSet;
 
 public class Main {
 
@@ -49,6 +48,13 @@ public class Main {
         //Q2 - Find nth Smallest of an unsorted array
         System.out.println("Question 2 - Find nth smallest of an unsorted array");
 
+        int[] array = new int[] {6,5,3,1,8,7,2,4};
+        int n = 3;
+        int element = ss.findNthSmallest(array, n);
+
+        if(element > 0) {
+            System.out.println("The Nth smallest element with n = " + n + " is " + element);
+        }
 
         printSeparator();
 
@@ -77,6 +83,14 @@ public class Main {
         /////
         //Q4 - Pancake sort
         System.out.println("Question 4 - Pancake sort");
+
+        System.out.println("Pass 1 : ");
+        int[] pancakeArray = new int[] {3, 2, 4, 1};
+        ss.pancakeSort(pancakeArray);
+
+        System.out.println("Pass 2 : ");
+        pancakeArray = new int[] {3, 2, 4, 1, 8, 5, 7, 6};
+        ss.pancakeSort(pancakeArray);
 
         printSeparator();
     }

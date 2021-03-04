@@ -13,6 +13,30 @@ public class Main {
         //Q1: Find K Closest Elements
         System.out.println("Question 1 - Find K closest elements");
 
+        System.out.println("Pass 1 : ");
+
+        int[] closeArr = new int[] {1,2,3,4,5};
+        int numberOfElements = 4;
+        int toElement = 3;
+
+        System.out.println("Input array is : ");
+        ss.print(closeArr);
+
+        System.out.println("Closest elements to " + toElement + " are : "
+                + ss.findClosestElementsFor(closeArr, numberOfElements, toElement));
+
+        System.out.println("Pass 2 : ");
+
+        closeArr = new int[] {1,2,3,4,5};
+        numberOfElements = 4;
+        toElement = -1;
+
+        System.out.println("Input array is : ");
+        ss.print(closeArr);
+
+        System.out.println("Closest elements to " + toElement + " are : "
+                + ss.findClosestElementsFor(closeArr, numberOfElements, toElement));
+
         printSeparator();
 
         /////

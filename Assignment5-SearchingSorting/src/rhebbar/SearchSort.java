@@ -5,36 +5,96 @@ import java.util.*;
 public class SearchSort {
     //Wrapper functions
 
+    //General
     public void print(int[] arr) {
         printArray(arr);
     }
 
+    //Q1
+    public List<Integer> findClosestElementsFor(int[] arr, int k, int x) {
+        return findClosestElements(arr, k, x);
+    }
+
+    //Q2
     public int[] getIntersectionOfArrays(int[] arr1, int[] arr2) {
         return intersection(arr1, arr2);
     }
 
+    //Q3
     public int getPeakIndexInArray(int[] array) {
         return peakIndexInMountainArray(array);
     }
 
+    //Q5
     public int countOnes(int[] arr, int low, int high) {
         return countNumberOfOnes(arr, low, high);
     }
 
     //Solution functions
 
-    //Q2
-    private int[] intersection(int[] arr1, int[] arr2) {
-        HashSet<Integer> setOfArr1 = new HashSet<Integer>();
+    //Q1
+    private List<Integer> findClosestElements(int[] arr, int k, int x) {
 
-        for(int i=0; i<arr1.length; i++) {
-            setOfArr1.add(arr1[i]);
+        ArrayList<Integer> array = new ArrayList<>(arr.length);
+
+        for (int i : arr)
+        {
+            array.add(i);
         }
 
-        HashSet<Integer> setOfArr2 = new HashSet<Integer>();
+        int totalElements = array.size();
 
-        for(int i=0; i<arr2.length; i++) {
-            setOfArr2.add(arr2[i]);
+        if(x <= arr[0]) {
+            //first k elements are closest
+            return array.subList(0,k);
+        }
+        else if(x >= arr[totalElements-1]) {
+            //last k elements are closest
+            return array.subList(totalElements-k, totalElements);
+        }
+        else {
+            //find index of element >= x
+            int index = Collections.binarySearch(array, x);
+
+            if(index < 0) {
+                index = -index-1;
+            }
+
+            //low will be on the left side
+            int lowIndex = Math.max(0, index-k-1);
+
+            //high will be on the right side
+            int highIndex = Math.min(totalElements-1, index+k-1);
+
+            while(highIndex-lowIndex > k-1) {
+
+                if(lowIndex < 0 || (x-array.get(lowIndex)) <= (array.get(highIndex)-x)) {
+                    highIndex--;
+                }
+                else if(highIndex > totalElements-1 || (x-array.get(lowIndex)) > (array.get(highIndex)-x)) {
+                    lowIndex++;
+                }
+                else {
+                    System.out.println("Case not handled - " + lowIndex + " , " + highIndex);
+                }
+            }
+
+            return array.subList(lowIndex, highIndex+1);
+        }
+    }
+
+    //Q2
+    private int[] intersection(int[] arr1, int[] arr2) {
+        HashSet<Integer> setOfArr1 = new HashSet<>();
+
+        for (int k : arr1) {
+            setOfArr1.add(k);
+        }
+
+        HashSet<Integer> setOfArr2 = new HashSet<>();
+
+        for (int k : arr2) {
+            setOfArr2.add(k);
         }
 
         setOfArr1.retainAll(setOfArr2);
@@ -71,7 +131,7 @@ public class SearchSort {
 
     //Q5
     private int countNumberOfOnes(int[] arr, int low, int high) {
-        while(low <= high) {
+        if(low <= high) {
             int mid = (low+high)/2;
 
             //check if the element at the middle index is the last 1

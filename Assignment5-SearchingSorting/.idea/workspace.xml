@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bdba898b-13bf-43b9-a557-d368396f3a25" name="Default Changelist" comment="" />
+    <list default="true" id="bdba898b-13bf-43b9-a557-d368396f3a25" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Assignment2-LinkedList/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment2-LinkedList/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment5-SearchingSorting/rhebbar/SearchSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment5-SearchingSorting/rhebbar/SearchSort.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rhebbar/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rhebbar/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rhebbar/SearchSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rhebbar/SearchSort.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -101,6 +101,26 @@ public class Main {
         //Q4: Reorganize string
         System.out.println("Question 4 - Reorganize string");
 
+        String s = "aab";
+        System.out.println("Pass 1 : " + s);
+
+        String output = ss.reorganise(s);
+
+        if(output.length() > 0)
+            System.out.println("Reorganised string is " + output);
+        else
+            System.out.println("Cannot reorganise string");
+
+        s = "aaab";
+        System.out.println("Pass 2 : " + s);
+
+        output = ss.reorganise(s);
+
+        if(output.length() > 0)
+            System.out.println("Reorganised string is " + output);
+        else
+            System.out.println("Cannot reorganise string");
+
         printSeparator();
 
         /////

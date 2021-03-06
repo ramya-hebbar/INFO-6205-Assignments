@@ -1,5 +1,7 @@
 package rhebbar;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -127,15 +129,15 @@ public class Main {
         //Q5: Count number of 1's in sorted binary array
         System.out.println("Question 5 - Count number of 1's in sorted binary array");
 
-        System.out.println("Pass 1 :");
-
         int[] binArr = { 1, 1, 1, 1, 0, 0, 0 };
+        System.out.println("Pass 1 : " + Arrays.toString(binArr));
+
         int n = binArr.length;
         System.out.println(ss.countOnes(binArr, 0, n-1) + " number of 1s found in the array");
 
-        System.out.println("Pass 2 :");
-
         binArr = new int[] {1, 1, 1, 1, 1, 1, 1};
+        System.out.println("Pass 2 : " + Arrays.toString(binArr));
+
         n = binArr.length;
         System.out.println(ss.countOnes(binArr, 0, n-1) + " number of 1s found in the array");
 

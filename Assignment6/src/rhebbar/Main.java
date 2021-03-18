@@ -14,6 +14,8 @@ public class Main {
         //Q1: Subtree of Another Tree
         System.out.println("Q1: Find out if a tree is a subtree of another");
 
+        System.out.println("Pass 1: ");
+
         BinaryTree<Integer> t1 = new BinaryTree<>();
         t1.root = generateTree1ForQ1();
 
@@ -32,6 +34,8 @@ public class Main {
         else {
             System.out.println("It is not a subtree");
         }
+
+        System.out.println("Pass 2: ");
 
         t1 = new BinaryTree<>();
         t1.root = generateTree2ForQ1();
@@ -59,6 +63,8 @@ public class Main {
         //Q2: Asteroid collision
         System.out.println("Q2: Find out the state of the asteroids after all collisions");
 
+        System.out.println("Pass 1: ");
+
         int[] asteroids = {5,10,-5};
         System.out.print("Asteroids before collision: ");
         System.out.println(Arrays.toString(asteroids));
@@ -66,6 +72,8 @@ public class Main {
         System.out.print("Asteroids after collision: ");
         asteroids = asteroidCollision(asteroids);
         System.out.println(Arrays.toString(asteroids));
+
+        System.out.println("Pass 2: ");
 
         asteroids = new int[] {8, -8};
         System.out.print("Asteroids before collision: ");
@@ -75,6 +83,8 @@ public class Main {
         asteroids = asteroidCollision(asteroids);
         System.out.println(Arrays.toString(asteroids));
 
+        System.out.println("Pass 3: ");
+
         asteroids = new int[] {10,2,-5};
         System.out.print("Asteroids before collision: ");
         System.out.println(Arrays.toString(asteroids));
@@ -82,6 +92,8 @@ public class Main {
         System.out.print("Asteroids after collision: ");
         asteroids = asteroidCollision(asteroids);
         System.out.println(Arrays.toString(asteroids));
+
+        System.out.println("Pass 4: ");
 
         asteroids = new int[] {-2,-1,1,2};
         System.out.print("Asteroids before collision: ");
@@ -97,13 +109,20 @@ public class Main {
 
         //Q3: 3 Sum
         System.out.println("Q3: Find unique triplets in the input array which add up to 0");
+
+        System.out.println("Pass 1: ");
+
         int[] triplets = {-1,0,1,2,-1,-4};
         System.out.println("Input array is: " + Arrays.toString(triplets));
         threeSum(triplets);
 
+        System.out.println("Pass 2: ");
+
         triplets = new int[] {};
         System.out.println("Input array is: " + Arrays.toString(triplets));
         threeSum(triplets);
+
+        System.out.println("Pass 3: ");
 
         triplets = new int[] {0};
         System.out.println("Input array is: " + Arrays.toString(triplets));
@@ -122,6 +141,52 @@ public class Main {
 
         //Q5: Reverse nodes in k-group
         System.out.println("Q5: Reverse nodes in k-group");
+
+        LinkedList<Integer> linkedList = new LinkedList<>();
+        linkedList.addTail(1);
+        linkedList.addTail(2);
+        linkedList.addTail(3);
+        linkedList.addTail(4);
+        linkedList.addTail(5);
+
+        System.out.println("Pass 1: ");
+
+        System.out.println("List before reverse: ");
+        linkedList.printList();
+
+        int k = 2;
+
+        System.out.println("Reversing in groups of " + k);
+        linkedList.head = linkedList.reverseListInGroups(k);
+
+        System.out.println("List after reverse: ");
+        linkedList.printList();
+
+        linkedList = new LinkedList<>();
+        linkedList.addTail(1);
+        linkedList.addTail(2);
+        linkedList.addTail(3);
+        linkedList.addTail(4);
+        linkedList.addTail(5);
+        linkedList.addTail(6);
+        linkedList.addTail(7);
+        linkedList.addTail(8);
+        linkedList.addTail(9);
+        linkedList.addTail(10);
+        linkedList.addTail(11);
+
+        System.out.println("Pass 2: ");
+
+        System.out.println("List before reverse: ");
+        linkedList.printList();
+
+        k = 4;
+
+        System.out.println("Reversing in groups of " + k);
+        linkedList.head = linkedList.reverseListInGroups(k);
+
+        System.out.println("List after reverse: ");
+        linkedList.printList();
 
         printSeparator();
 

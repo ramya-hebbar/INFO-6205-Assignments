@@ -35,6 +35,7 @@ public class Main {
             System.out.println("It is not a subtree");
         }
 
+        System.out.println();
         System.out.println("Pass 2: ");
 
         t1 = new BinaryTree<>();
@@ -73,6 +74,7 @@ public class Main {
         asteroids = asteroidCollision(asteroids);
         System.out.println(Arrays.toString(asteroids));
 
+        System.out.println();
         System.out.println("Pass 2: ");
 
         asteroids = new int[] {8, -8};
@@ -83,6 +85,7 @@ public class Main {
         asteroids = asteroidCollision(asteroids);
         System.out.println(Arrays.toString(asteroids));
 
+        System.out.println();
         System.out.println("Pass 3: ");
 
         asteroids = new int[] {10,2,-5};
@@ -93,6 +96,7 @@ public class Main {
         asteroids = asteroidCollision(asteroids);
         System.out.println(Arrays.toString(asteroids));
 
+        System.out.println();
         System.out.println("Pass 4: ");
 
         asteroids = new int[] {-2,-1,1,2};
@@ -116,12 +120,14 @@ public class Main {
         System.out.println("Input array is: " + Arrays.toString(triplets));
         threeSum(triplets);
 
+        System.out.println();
         System.out.println("Pass 2: ");
 
         triplets = new int[] {};
         System.out.println("Input array is: " + Arrays.toString(triplets));
         threeSum(triplets);
 
+        System.out.println();
         System.out.println("Pass 3: ");
 
         triplets = new int[] {0};
@@ -141,6 +147,7 @@ public class Main {
         System.out.print("Printing for n = " + n + ": ");
         System.out.println(combinations);
 
+        System.out.println();
         System.out.println("Pass 2: ");
         n = 3;
         combinations = generateParentheses(n);
@@ -187,6 +194,7 @@ public class Main {
         linkedList.addTail(10);
         linkedList.addTail(11);
 
+        System.out.println();
         System.out.println("Pass 2: ");
 
         System.out.println("List before reverse: ");

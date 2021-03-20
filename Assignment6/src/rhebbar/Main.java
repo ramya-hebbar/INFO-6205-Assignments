@@ -135,6 +135,18 @@ public class Main {
         //Q4: Generate well-formed parentheses
         System.out.println("Q4: Generate all combinations of well-formed parentheses for n");
 
+        System.out.println("Pass 1: ");
+        int n = 2;
+        List<String> combinations = generateParentheses(n);
+        System.out.print("Printing for n = " + n + ": ");
+        System.out.println(combinations);
+
+        System.out.println("Pass 2: ");
+        n = 3;
+        combinations = generateParentheses(n);
+        System.out.print("Printing for n = " + n + ": ");
+        System.out.println(combinations);
+
         printSeparator();
 
         ///////////////////////////////////////////////////////////////////////////
@@ -246,6 +258,15 @@ public class Main {
         System.out.println(result);
     }
 
+    //Q4
+    public static List<String> generateParentheses(int n) {
+        List<String> result = new ArrayList<>();
+        getAllCombinations(n, n, "", result);
+        return result;
+    }
+
+    //Internal calls
+
     public static void twoSum(int[] array, int i, List<List<Integer>> result) {
         int low = i+1;
         int high = array.length-1;
@@ -263,6 +284,25 @@ public class Main {
                 while(low<high && array[low] == array[low-1]) //advance to the right to find next unique triplets
                     low++;
             }
+        }
+    }
+
+    public static void getAllCombinations(int openCount, int closeCount, String str, List<String> result) {
+        //base condition to exit recursive call
+        if(openCount > closeCount) // number of open brackets cannot be more than close brackets
+            return;
+
+        if(openCount > 0) { // add open bracket
+            getAllCombinations(openCount-1, closeCount, str+"( ", result);
+        }
+
+        if(closeCount > 0) { // add close bracket
+            getAllCombinations(openCount, closeCount-1, str+") ", result);
+        }
+
+        if(openCount == 0 && closeCount == 0) { // valid combination, add to result
+            result.add(str);
+            return;
         }
     }
 

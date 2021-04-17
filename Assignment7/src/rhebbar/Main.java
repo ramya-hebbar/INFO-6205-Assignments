@@ -1,6 +1,6 @@
 package rhebbar;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class Main {
 
@@ -45,6 +45,16 @@ public class Main {
         //Q2: Reverse words in a string
         System.out.println("Q2: Reverse words in a string");
 
+        System.out.println("Pass 1: ");
+        String s1 = "the sky is blue";
+        System.out.println("Input string is : " + s1);
+        System.out.println("Reversed string is : " + reverseWords(s1));
+
+        System.out.println("Pass 2: ");
+        s1 = "  Bob    Loves  Alice  ";
+        System.out.println("Input string is : " + s1);
+        System.out.println("Reversed string is : " + reverseWords(s1));
+
         printSeparator();
 
         ///////////////////////////////////////////////////////////////////////////
@@ -52,6 +62,23 @@ public class Main {
         //Q3: Set matrix zeroes
         System.out.println("Q3: Set matrix zeroes");
 
+        System.out.println("Pass 1: ");
+        matrix = new int[][] {{1,1,1},{1,0,1},{1,1,1}};
+        System.out.println("Input matrix is: ");
+        printMatrix(matrix);
+
+        setZeroes(matrix);
+        System.out.println("Output matrix is: ");
+        printMatrix(matrix);
+
+        System.out.println("Pass 2: ");
+        matrix = new int[][] {{0,1,2,0},{3,4,5,2},{1,3,1,5}};
+        System.out.println("Input matrix is: ");
+        printMatrix(matrix);
+
+        setZeroes(matrix);
+        System.out.println("Output matrix is: ");
+        printMatrix(matrix);
         printSeparator();
 
         ///////////////////////////////////////////////////////////////////////////
@@ -139,6 +166,49 @@ public class Main {
                 matrix[n-i-1][n-j-1] = matrix[j][n-i-1];
                 matrix[j][n-i-1] = matrix[i][j];
                 matrix[i][j] = temp;
+            }
+        }
+    }
+
+    //Q2
+    private static String reverseWords(String s) {
+        //removing extra spaces if any
+        s = s.trim();
+
+        //splitting based on spaces
+        List<String> words = Arrays.asList(s.split("\\s+"));
+
+        //reversing the collection
+        Collections.reverse(words);
+
+        return String.join(" ", words);
+    }
+
+    //Q3
+    private static void setZeroes(int[][] matrix) {
+
+        int numberOfRows = matrix.length;
+        int numberOfCols = matrix[0].length;
+
+        Set<Integer> rowsWithZero = new HashSet<>();
+        Set<Integer> colsWithZero = new HashSet<>();
+
+        //store the rows and columns marked zero
+        for(int i=0; i < numberOfRows; i++) {
+            for(int j=0; j < numberOfCols; j++) {
+                if(matrix[i][j] == 0) {
+                    rowsWithZero.add(i);
+                    colsWithZero.add(j);
+                }
+            }
+        }
+
+        //update elements on stored rows and columns
+        for(int i=0; i < numberOfRows; i++) {
+            for(int j=0; j < numberOfCols; j++) {
+                if(rowsWithZero.contains(i) || colsWithZero.contains(j)) {
+                    matrix[i][j] = 0;
+                }
             }
         }
     }

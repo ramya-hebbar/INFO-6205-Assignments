@@ -119,18 +119,12 @@ public class Main {
         System.out.println("Number of islands found are: " + numIslands(islandMatrix));
 
         printSeparator();
-
-        ///////////////////////////////////////////////////////////////////////////
     }
 
     //Solution functions
 
     //Q1
-
-//    static final int size = 9;
-
-    public static void findShortestPath(int[][] graph, int src)
-    {
+    private static void findShortestPath(int[][] graph, int src) {
         //using Dijkstra's algorithm
         int[] dist = new int[graph.length]; // The output array. dist[i] will hold the shortest distance from src to i
 
@@ -171,8 +165,7 @@ public class Main {
         printSolution(dist);
     }
 
-    private static int minDistance(int[] dist, boolean[] sptSet)
-    {
+    private static int minDistance(int[] dist, boolean[] sptSet) {
         // Initialize min value
         int min = Integer.MAX_VALUE, min_index = -1;
 
@@ -185,15 +178,14 @@ public class Main {
         return min_index;
     }
 
-    private static void printSolution(int[] dist)
-    {
+    private static void printSolution(int[] dist) {
         System.out.println("Node \t\t Distance");
         for (int i = 0; i < dist.length; i++)
             System.out.println(i + " \t\t " + dist[i]);
     }
 
     //Q2
-    public static boolean canFinishCourse(int numCourses, int[][] prerequisites) {
+    private static boolean canFinishCourse(int numCourses, int[][] prerequisites) {
         if(numCourses == 0)
             return true;
 
@@ -231,7 +223,7 @@ public class Main {
     }
 
     //Q3
-    public static int ladderLength(String beginWord, String endWord, List<String> wordList) {
+    private static int ladderLength(String beginWord, String endWord, List<String> wordList) {
         Set<String> set = new HashSet<>(wordList);
         Queue<String> queue = new LinkedList<>();
         queue.add(beginWord);
@@ -270,8 +262,7 @@ public class Main {
     }
 
     //Q4
-
-    public static int numIslands(char[][] grid) {
+    private static int numIslands(char[][] grid) {
         if(grid == null || grid.length == 0)
             return 0;
 
@@ -307,13 +298,13 @@ public class Main {
     }
 
     //Helper functions
-    public static void printSeparator() {
+    private static void printSeparator() {
         System.out.println();
         System.out.println("/*  *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */");
         System.out.println();
     }
 
-    public static void printMatrix(int[][] matrix) {
+    private static void printMatrix(int[][] matrix) {
         for (int[] ints : matrix) {
             for (int j = 0; j < matrix.length; j++) {
                 System.out.print(" " + ints[j]);
@@ -322,7 +313,7 @@ public class Main {
         }
     }
 
-    public static void printCharacterMatrix(char[][] matrix) {
+    private static void printCharacterMatrix(char[][] matrix) {
         for (char[] chars : matrix) {
             for (int j = 0; j < matrix.length; j++) {
                 System.out.print(" " + chars[j]);
